@@ -5,10 +5,9 @@
 - [Overview](#overview)
 - [License](#lic)
 - [Prerequisites](#pre)
-- [Class Diagram](#class)
-- [Activity Diagram](#activity)
 - [Creating a package workspace](#workspace)
 - [Standard install via command-line](#implementation)
+- [Run Walker using rosrun](#rosrun)
 
 ## <a name="overview"></a> Overview
 The repository includes a package for turtlebot to implement a simple walker algorithm much like Roomba robot vacuum cleaner. The robot should move forward until it reaches an obstacle but should not collide with it, then the robot will rotate in place until the way ahead is cleared. Once the way is cleared the robot moves forward, and repeat's the same process again when it comes across the obstacle.
@@ -41,18 +40,6 @@ The repository includes a package for turtlebot to implement a simple walker alg
   ```
   The developed package also depends on: *roscpp*, *geometry_msgs*, & *sensor_msgs*
 
-## <a name="class"></a> Class Diagram
-<p align="center">
-  <a target="_blank"><img src="UML/ClassDiagram.png" alt="NMPC" width="360" height="360" border="10" />
-  </a>
-</p>
-
-## <a name="activity"></a> Activity Diagram
-<p align="center">
-  <a target="_blank"><img src="UML/ActivityDiagram.png" alt="NMPC" width="480" height="480" border="10" />
-  </a>
-</p>
-
 ## <a name="workspace"></a> Creating a package workspace
 
 ```bash
@@ -75,3 +62,20 @@ $ echo $ROS_PACKAGE_PATH
 ```
 >Note: The last command checks whether the environment variable includes the directory you are in or not. If it doesn't include please follow the above steps properly. This is the most important step to check that everything is installed and linked properly. 
 
+## <a name="rosrun"></a> Run Walker using rosrun
+
+After following the above standard install commands, follow the below commands to run turtlebot_gazebo and default world
+
+```bash
+$ roslaunch turtlebot_gazebo turtlebot_world.launch
+```
+You will see a gazebo window open along with default turtlebot_world with obstacles as well as the turtlebot robot. Now, we will run the walker node. Open a new shell and follow the below commands.
+
+```bash
+$ cd ~/catkin_ws/src
+$ source devel/setup.bash
+$ rosrun turtlebot_walker turtlebot_walker_node
+```
+Now, the turtlebot should start moving forward. As the robot drives and when it encounters an obstacle, it will stop, turn in place to free itself and then continue driving.
+
+>Note: We can add obstacles when the simulation is going on, which can be useful to check whether our code is working properly or not.
