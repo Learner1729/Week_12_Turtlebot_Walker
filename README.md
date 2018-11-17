@@ -8,6 +8,7 @@
 - [Creating a package workspace](#workspace)
 - [Standard install via command-line](#implementation)
 - [Run Walker using rosrun](#rosrun)
+- [Run Walker using launch file](#roslaunch)
 
 ## <a name="overview"></a> Overview
 The repository includes a package for turtlebot to implement a simple walker algorithm much like Roomba robot vacuum cleaner. The robot should move forward until it reaches an obstacle but should not collide with it, then the robot will rotate in place until the way ahead is cleared. Once the way is cleared the robot moves forward, and repeat's the same process again when it comes across the obstacle.
@@ -79,3 +80,12 @@ $ rosrun turtlebot_walker turtlebot_walker_node
 Now, the turtlebot should start moving forward. As the robot drives and when it encounters an obstacle, it will stop, turn in place to free itself and then continue driving.
 
 >Note: We can add obstacles when the simulation is going on, which can be useful to check whether our code is working properly or not.
+
+## <a name="roslaunch"></a> Run Walker using launch file
+
+The ROS node and turtlebot_gazebo environment can be start using a single launch file as follows:
+
+```bash
+$ roslaunch turtlebot_walker turtlebot_walker_node
+```
+>Note: No need to start roscore, roslaunch will automatically start if it detects that it is not already running.
