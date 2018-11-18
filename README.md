@@ -87,7 +87,7 @@ Now, the turtlebot should start moving forward. As the robot drives and when it 
 The ROS node and turtlebot_gazebo environment can be start using a single launch file as follows:
 
 ```bash
-$ roslaunch turtlebot_walker turtlebot_walker_node
+$ roslaunch turtlebot_walker walker.launch
 ```
 >Note: No need to start roscore, roslaunch will automatically start if it detects that it is not already running.
 
