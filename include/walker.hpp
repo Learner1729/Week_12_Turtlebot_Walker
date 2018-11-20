@@ -23,7 +23,7 @@
  * SOFTWARE.
  *
  * @brief ROS walker class header file
- * @date 11-17-2018
+ * @date 11-20-2018
  */
 #ifndef INCLUDE_WALKER_HPP_
 #define INCLUDE_WALKER_HPP_

@@ -23,7 +23,7 @@
  * SOFTWARE.
  *
  * @brief Definition of walker class methods
- * @date 11-17-2018
+ * @date 11-20-2018
  */
 
 // Including user-defined header file
@@ -54,7 +54,7 @@ void Walker::laserCallback(const sensor_msgs::LaserScan::ConstPtr& msg) {
    * the front of the robot. If so, a collision is about to occur, update the
    * collision variable.
    */
-  for(auto i:msg->ranges) {
+  for (auto i : msg->ranges) {
     if (i < msg->range_min + 0.2) {
       collision = true;
       ROS_WARN_STREAM("About to hit... Obstacle ahead!!!");
