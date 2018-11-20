@@ -74,7 +74,7 @@ $ roslaunch turtlebot_gazebo turtlebot_world.launch
 You will see a gazebo window open along with default turtlebot_world with obstacles as well as the turtlebot robot. Now, we will run the walker node. Open a new shell and follow the below commands.
 
 ```bash
-$ cd ~/catkin_ws/src
+$ cd ~/catkin_ws
 $ source devel/setup.bash
 $ rosrun turtlebot_walker turtlebot_walker_node
 ```
@@ -90,6 +90,12 @@ The ROS node and turtlebot_gazebo environment can be start using a single launch
 $ roslaunch turtlebot_walker walker.launch
 ```
 >Note: No need to start roscore, roslaunch will automatically start if it detects that it is not already running.
+
+To launch Walker, Gazebo and rviz altogether use the below command.
+```bash
+$ roslaunch turtlebot_walker walker_custom_world.launch
+```
+>Note: Output of the above launch file is stored in a results directory.
 
 ## <a name="bag"></a> ROS bag
 
