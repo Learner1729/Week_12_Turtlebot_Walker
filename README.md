@@ -15,7 +15,7 @@
 The repository includes a package for turtlebot to implement a simple walker algorithm much like Roomba robot vacuum cleaner. The robot should move forward until it reaches an obstacle but should not collide with it, then the robot will rotate in place until the way ahead is cleared. Once the way is cleared the robot moves forward, and repeat's the same process again when it comes across the obstacle.
 
 ## <a name="lic"></a> License
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Learner1729/turtlebot_walker/blob/master/LICENSE)
 
 ## <a name="pre"></a> Prerequisites 
 
