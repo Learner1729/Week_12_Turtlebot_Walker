@@ -4,7 +4,14 @@
   <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
     <arg name="world_file" value="$(find turtlebot_walker)/world/customWorld"/>
   </include>
-    
+
+  <node
+    pkg="rviz"
+    name="rviz"
+    type="rviz"
+    args="-d $(find turtlebot_walker)/rviz/turtlebot_rviz_demo.rviz"
+  />
+
   <node
     pkg="turtlebot_walker"
     name="turtlebot_walker_node"
@@ -19,5 +26,4 @@
     args="--duration=35.0 -a -x /camera/(.*) -O $(find turtlebot_walker)/results/walker.bag"
     if="$(arg record)"
   />
-
 </launch>
